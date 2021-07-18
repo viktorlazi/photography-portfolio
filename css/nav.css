@@ -1,0 +1,25 @@
+nav{
+  font-family: 'Encode Sans SC';
+  position: fixed;
+  background-color: rgba(0, 0, 0, 1);
+  width: 100vw;
+}
+nav ul{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+}
+nav ul a li{
+  font-size: 20px;
+  cursor: pointer;
+  padding: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+nav ul a li.active{
+  opacity: 1;
+}
+nav ul a li:hover{
+  opacity: 1;
+}

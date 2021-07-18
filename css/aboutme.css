@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@500&display=swap');
 
-
-@keyframes animatedBackground {
-  from {
-    background-position: 50%;
-  }
-  to {
-    background-position-x: 100%;
-  } 
-}
-
-/* main */
-
 main{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -22,21 +10,15 @@ main section{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-position: 0px 0px;
-  background-repeat: repeat-x;
-  animation: animatedBackground 10s infinite alternate linear;
-  animation-iteration-count: 1;
-  animation-play-state:paused;
-  animation-fill-mode: forwards;
 }
 main section:hover{
   animation-play-state:running;
 }
 main section.photo{
-  background: url("../assets/landing1.jpg") center;
+  background: none;
 }
 main section.video{
-  background: url("../assets/landing2.jpg") center;
+  background: url("../assets/aboutme_min.jpg");
 }
 main section .shadow{
   text-align: center;

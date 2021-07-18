@@ -33,10 +33,10 @@ main section:hover{
   animation-play-state:running;
 }
 main section.photo{
-  background: url("../assets/landing1.jpg") center;
+  background: url("../assets/contact_min.jpg") center;
 }
 main section.video{
-  background: url("../assets/landing2.jpg") center;
+  background: none;
 }
 main section .shadow{
   text-align: center;

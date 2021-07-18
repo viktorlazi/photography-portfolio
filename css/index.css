@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@500&display=swap');
+
+
+@keyframes animatedBackground {
+  from {
+    background-position: 50%;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+body{
+  font-family: Ubuntu;
+  user-select: none;
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+h1{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+}
+ul li{
+  list-style-type: none;
+}
+body{
+  display:block;
+}
+/* nav */
+nav{
+  font-family: 'Encode Sans SC';
+  position: fixed;
+  background-color: rgba(0, 0, 0, 1);
+  width: 100vw;
+}
+nav ul{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+}
+nav ul li{
+  font-size: 20px;
+  cursor: pointer;
+  padding: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+nav ul li.active{
+  opacity: 1;
+}
+nav ul li:hover{
+  opacity: 1;
+}
+
+/* main */
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+main section{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: animatedBackground 10s infinite alternate linear;
+  animation-iteration-count: 1;
+  animation-play-state:paused;
+  animation-fill-mode: forwards;
+}
+main section:hover{
+  animation-play-state:running;
+}
+main section.photo{
+  background: url("../assets/landing1.jpg") center;
+}
+main section.video{
+  background: url("../assets/landing2.jpg") center;
+}
+main section .shadow{
+  text-align: center;
+  /*background-color: rgba(0,0,0,0.3);*/
+  padding: 0 20px;
+}
+main section h1{
+  cursor: pointer;
+  font-size: 88px;
+  font-weight: 900;
+}

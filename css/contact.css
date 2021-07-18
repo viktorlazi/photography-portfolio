@@ -38,13 +38,23 @@ main section.photo{
 main section.video{
   background: none;
 }
-main section .shadow{
-  text-align: center;
-  /*background-color: rgba(0,0,0,0.3);*/
-  padding: 0 20px;
+
+/* form */
+form input[type="text"]{
+  font-size: 24px;
+  padding: 5px;
+  outline: none;
 }
-main section h1{
+form input[type="submit"]{
+  margin-top: 20px;
+  font-size: 24px;
+  padding: 5px;
+  outline: none;
   cursor: pointer;
-  font-size: 88px;
-  font-weight: 900;
+}
+textarea{
+  font-family: Arial;
+  font-size: 20px;
+  padding: 5px;
+  outline: none;
 }

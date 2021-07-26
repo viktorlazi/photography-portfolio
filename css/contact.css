@@ -23,17 +23,12 @@ main section{
   align-items: center;
   height: 100vh;
   background-position: 0px 0px;
-  background-repeat: repeat-x;
-  animation: animatedBackground 10s infinite alternate linear;
+  animation: animatedBackground 10s infinite linear;
   animation-iteration-count: 1;
-  animation-play-state:paused;
   animation-fill-mode: forwards;
 }
-main section:hover{
-  animation-play-state:running;
-}
 main section.photo{
-  background: url("../assets/contact_min.jpg") center;
+  background: url("../assets/contact_min.jpg");
 }
 main section.video{
   background: none;

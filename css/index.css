@@ -23,7 +23,7 @@ main section{
   height: 100vh;
   background-position: 0px 0px;
   background-repeat: repeat-x;
-  animation: animatedBackground 10s infinite alternate linear;
+  animation: animatedBackground 30s infinite alternate linear;
   animation-iteration-count: 1;
   animation-play-state:paused;
   animation-fill-mode: forwards;
@@ -32,7 +32,7 @@ main section{
   z-index: 0;
 }
 main section:hover{
-  opacity: 0.9;
+  opacity: 0.8;
   animation-play-state:running;
 }
 main section.photo{

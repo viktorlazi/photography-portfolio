@@ -1,0 +1,52 @@
+main{
+  background-color: white;  
+  color: black;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 15vh;
+  gap: 20px;
+}
+ul{
+  font-size: 1.2rem;
+  display: flex;
+  text-transform: uppercase;
+  gap: 15px;
+}
+ul li a{
+  cursor: pointer;
+  color: black;
+  padding: 5px;
+  position: relative;
+}
+ul li a::before{
+  content: '';
+  position: absolute;
+  left:5px;
+  bottom:0;
+  right:5px;
+  height:1px;
+  background-color: black;
+  transition: all 0.5s ease;
+  transform: scale(0);
+}
+ul li a:hover::before,
+ul li a.active::before{
+  transform: scale(1);
+}
+
+.gallery{
+  display: flex;
+  flex-shrink: inherit;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-x: scroll;
+  gap: 10px;  
+  width: 100vw;
+  cursor: grab;
+}
+.gallery img{
+  padding: 50px;
+}

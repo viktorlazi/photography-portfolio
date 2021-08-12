@@ -22,4 +22,5 @@ ul li{
 }
 body{
   display:block;
+  user-select: none;
 }

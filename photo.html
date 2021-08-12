@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Marinbarii</title>
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/photo.css">
     <link rel="stylesheet" type="text/css" href="./css/nav.css">
     <link rel="stylesheet" type="text/css" href="./css/universalities.css">
   </head>
@@ -15,16 +15,84 @@
       </ul>
     </nav>
     <main>
-      <section class="photo">
-        <div class="shadow">
-          <h1>PHOTO</h1>
-        </div>
-      </section>
-      <section class="video">
-        <div class="shadow">
-          <h1>VIDEO</h1>
-        </div>
-      </section>
+      <ul>
+        <li><a onclick="x();" class="active">Portraits</a></li>
+        <li><a onclick="x();">Product</a></li>
+        <li><a onclick="x();">'Love of cinema'</a></li>
+        <li><a onclick="x();">'Need for speed'</a></li>
+        <li><a onclick="x();">'Music love letter'</a></li>
+      </ul>
+      <div class="gallery" id="gallery" onClick = "stopScrolling();">
+        <img src="./assets/SLIKE PORTFOLIO/PORTRAIT/Scaled/1.jpg"/>
+        <img src="./assets/SLIKE PORTFOLIO/PORTRAIT/Scaled/2.jpg"/>
+        <img src="./assets/SLIKE PORTFOLIO/PORTRAIT/Scaled/3.jpg"/>
+        <img src="./assets/SLIKE PORTFOLIO/PORTRAIT/Scaled/4.jpg"/>
+        <img src="./assets/SLIKE PORTFOLIO/PORTRAIT/Scaled/5.jpg"/>
+        <img src="./assets/SLIKE PORTFOLIO/PORTRAIT/Scaled/6.jpg"/>
+        <img src="./assets/SLIKE PORTFOLIO/PORTRAIT/Scaled/7.jpg"/>
+      </div>
     </main>
+
+    <script>
+      var gallery = document.getElementById('gallery');
+      console.log(gallery);
+      var widths = [];
+      for(var i = 0; i < gallery.childElementCount; i++){
+        gallery.children[i].setAttribute('draggable', false);
+        widths.push(gallery.children[i].offsetWidth);
+      }
+      var numberOfScrolls = 0;
+      var scrollingInterval = setInterval(()=>{
+        gallery.scrollBy({
+          top: 0,
+          left: widths[numberOfScrolls] + 10,
+          behavior: 'smooth'
+        });
+        numberOfScrolls++;
+        if(widths.length === numberOfScrolls){
+          clearInterval(scrollingInterval);
+        }
+      }, 3000);
+      function stopScrolling(){
+        clearInterval(scrollingInterval)
+      }
+
+      var pos = { top: 0, left: 0, x: 0, y: 0 };
+
+      const mouseMoveHandler = function(e) {
+        // How far the mouse has been moved
+        const dx = e.clientX - pos.x;
+        const dy = e.clientY - pos.y;
+        
+        // Scroll the element
+        gallery.scrollTop = pos.top - dy;
+        gallery.scrollLeft = pos.left - dx;
+      };
+      const mouseUpHandler = function() {
+        gallery.style.cursor = 'grab';
+        gallery.style.removeProperty('user-select');
+
+        document.removeEventListener('mousemove', mouseMoveHandler);
+        document.removeEventListener('mouseup', mouseUpHandler);
+      };
+      const mouseDownHandler = function(e) {
+        gallery.style.cursor = 'grabbing';
+        gallery.style.userSelect = 'none';
+
+        pos = {
+          // The current scroll 
+          left: gallery.scrollLeft,
+          top: gallery.scrollTop,
+          // Get the current mouse position
+          x: e.clientX,
+          y: e.clientY,
+        };
+        
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+      };
+      gallery.onmousedown = mouseDownHandler;
+      gallery.onmouseup = mouseUpHandler;
+    </script>
   </body>
 </html>
